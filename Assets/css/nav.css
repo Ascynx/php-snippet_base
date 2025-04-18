@@ -1,0 +1,19 @@
+.img_container {
+    width: 64px;
+    height: 64px;
+    margin-right: 4px;
+    overflow: hidden;
+}
+
+.dragContainer {
+    height: 128px;
+    width: 128px;
+    background-color: inherit;
+}
+
+div.emptyContainer {
+    min-height: 32px;
+    min-width: 200px;
+    background-color: grey;
+    border: 10px 10px black dotted;
+}
