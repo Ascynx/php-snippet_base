@@ -94,9 +94,9 @@ function update() {
         let dragPiece = $(el).find("div.dragPiece");
         if (typeof(dragPiece) != 'undefined' && dragPiece.length > 0) {
             let id = dragPiece[0].id;
-            url.searchParams.set("container-" + containerId, id);
+            url.searchParams.set(containerId, id);
         } else {
-            url.searchParams.set("container-" + containerId, -1);
+            url.searchParams.set(containerId, -1);
         }
     });
 
