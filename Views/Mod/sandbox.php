@@ -1,5 +1,5 @@
 <div>
-    <div class="flex greybg containerContainer">
+    <div class="flex greybg logic_container">
         <?php
             create_load_piece(0, "Assets/images/king.png");
             create_load_piece(1, "Assets/images/rook.png");
@@ -7,9 +7,9 @@
         ?>
     </div>
     <div class="flex">
-        <div class="greybg">
+        <div class="minsize_half">
             <?php
-                create_load_empty_container(0);
+                create_extensible_empty_container(2);
             ?>
         </div>
         <div class="frame-container">

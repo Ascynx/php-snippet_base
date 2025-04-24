@@ -1,4 +1,8 @@
 <?php
     $COMPONENTS = [
-        "Views/Components/foot.php"
+        "testing" => [
+            "Views/Components/foot.php",
+            "Views/Components/nav.php",
+            "Views/Mod/sandbox.php"
+        ]
     ];

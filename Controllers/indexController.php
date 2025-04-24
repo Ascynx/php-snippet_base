@@ -4,23 +4,27 @@
         $title = "Index";
 
         require_once("Views/base.php");
-    } elseif (isPage($uri, "/test")) {
-        $page_content = "Views/Mod/testMod.php";
+    } elseif (isPage($uri, "/sandbox")) {
+        $page_content = "Views/Mod/sandbox.php";
         $title = "Test";
 
         require_once("Views/base.php");
-    } elseif (isPage($uri, "/testing")) {
-        require_once("Views/Mod/testingBase.php");
+    } elseif (isPage($uri, "/sandboxpreview")) {
+        require_once("Views/Mod/sandbox_preview.php");
         require_once("Models/ComponentModel.php");
-        sort($components);
+        require_once("Views/Sideload/css.php");
 
-        foreach ($components as $k => $v) {
-            $id = $v;
-            if (!isset($COMPONENTS[$id])) {
+        for ($i = 0; $i < count($components); $i++) {
+            $id = $components[$i];
+            if ($id == -1) {
+                continue;
+            }
+            if (!isset($COMPONENTS["testing"][$id])) {
                 echo("missing component for id: " . $id);
                 continue;
             }
-            $path = $COMPONENTS[$id];
+
+            $path = $COMPONENTS["testing"][$id];
             require($path);
         }
     }

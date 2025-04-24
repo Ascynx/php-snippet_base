@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <?php
     require_once("Models/pageSortingModel.php");
     require_once("Models/UtilitiesModel.php");
