@@ -3,7 +3,7 @@
         "testing" => [
             "Views/Components/foot.php",
             "Views/Components/nav.php",
-            "Views/Mod/sandbox.php",
+            "Views/index.php",
             "Views/Snippets/HelloWorld.php"
         ]
     ];

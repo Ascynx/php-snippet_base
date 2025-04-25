@@ -55,12 +55,39 @@ div.frame-container {
     min-height: 100%;
 }
 
+/** zone pour montrer image par dessus piece quand hover ou piece taille image dans la zone de preview. */
+
 .logic_draggable {
-    height: 128px;
-    width: 128px;
+    min-width: 16px;
+    min-height: 16px;
     background-color: inherit;
     border: gray solid;
+    position: relative;
 }
+
+:not(.logic_preview)>.logic_draggable {
+    height: 128px;
+    width: 128px;
+}
+
+.logic_preview>.logic_draggable {
+    height: fit-content;
+    width: fit-content;
+}
+
+.logic_draggable>img {
+    pointer-events: none;
+}
+
+:not(.logic_preview)>.logic_draggable:hover>img:not(.logic_dragging) {
+    float: left;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    z-index: 1000;
+}
+
+/** endzone */
 
 div.logic_container {
     min-height: 128px;

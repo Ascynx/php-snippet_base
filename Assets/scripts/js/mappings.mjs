@@ -8,6 +8,7 @@ export const DRAGGABLE_TAG = "logic_draggable";
 export const OVERDRAGGING_TAG = "logic_overDrag";
 export const DRAGGING_TAG = "logic_dragging";
 export const EXPANDABLE_TAG = "logic_expandable";
+export const PREVIEW_LEFT_TAG = "logic_preview_left"
 
 export const MAXIMUM_ELEMENTS_ATTRIBUTE = "logic_max";
 

@@ -1,4 +1,4 @@
-import { PREVIEW_MAPPINGS, CONTAINER_TAG, OVERDRAGGING_TAG, DRAGGABLE_TAG, DRAGGING_TAG,  PREVIEW_TAG, toKeyMapping, MAXIMUM_ELEMENTS_ATTRIBUTE, EXPANDABLE_TAG } from "./mappings.mjs";
+import { PREVIEW_MAPPINGS, CONTAINER_TAG, OVERDRAGGING_TAG, DRAGGABLE_TAG, DRAGGING_TAG,  PREVIEW_TAG, toKeyMapping, MAXIMUM_ELEMENTS_ATTRIBUTE, EXPANDABLE_TAG, PREVIEW_LEFT_TAG } from "./mappings.mjs";
 //.mjs car import depuis modules.
 
 function load() {
@@ -54,7 +54,12 @@ function load() {
     $("iframe").on(
         {
             "load": (e) => {
-                e.target.style.height = Math.max(128, e.target.contentWindow.document.body.scrollHeight) + 'px';
+                let preview_left = $("." + PREVIEW_LEFT_TAG);
+                let height = 128;
+                if (typeof(preview_left) !== 'undefined') {
+                    height = getChildrenCompiledHeight(preview_left[0]);
+                }
+                e.target.style.height = Math.max(height, e.target.contentWindow.document.body.scrollHeight) + 'px';
 
             }
         }
@@ -108,7 +113,22 @@ function update() {
  * @param {HTMLElement} el 
  */
 function updateCSS(el) {
-    el.style.setProperty("height", (el.children.length + 1) * 128 + "px");
+    let height = getChildrenCompiledHeight(el);
+    height += 128;
+
+    el.style.setProperty("height", height + "px");
+}
+
+/**
+ * @param {HTMLElement} el
+ */
+function getChildrenCompiledHeight(el) {
+    let height = 0;
+    for (let i = 0; i < el.children.length; i++) {
+        let item = el.children.item(i);
+        height += $(item).height();
+    }
+    return height; 
 }
 
 load();
