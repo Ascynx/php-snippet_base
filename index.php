@@ -12,10 +12,9 @@
 
     #TODOS
 
-    #Met en place une page de base
-    # Crée des snippets avec/sans css
-    # Drag and drop avec des frames?
-    # Watch file changes. (reload au changement de fichier)
+    # Crée les différents exercices
+    # Crée les différentes images
+    # lies les images et partie de codes.
     # Vérifie la logique derrière.
 
     # Envoie à adrien pour le css.

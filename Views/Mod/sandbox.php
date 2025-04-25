@@ -4,12 +4,13 @@
             create_load_piece(0, "Assets/images/king.png");
             create_load_piece(1, "Assets/images/rook.png");
             create_load_piece(2, "Assets/images/book.png");
+            create_load_piece(3, "Assets/images/Snippets/HelloWorld.png")
         ?>
     </div>
     <div class="flex">
-        <div class="minsize_half">
+        <div class="minsize_half greybg">
             <?php
-                create_extensible_empty_container(2);
+                create_extensible_empty_container();
             ?>
         </div>
         <div class="frame-container">

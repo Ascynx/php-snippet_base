@@ -4,15 +4,3 @@
     margin-right: 4px;
     overflow: hidden;
 }
-
-.logic_draggable {
-    height: 128px;
-    width: 128px;
-    background-color: inherit;
-}
-
-div.logic_container {
-    min-height: 128px;
-    min-width: 200px;
-    border: 10px 10px black dotted;
-}

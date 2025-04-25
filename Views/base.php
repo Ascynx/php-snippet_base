@@ -25,7 +25,8 @@
 			  crossorigin="anonymous">
     </script>
     <script
-        src="Assets/scripts/js/DragPieceScript.js"
+        type="module"
+        src="Assets/scripts/js/index.mjs"
         crossorigin="anonymous">
     </script>
 </html>
