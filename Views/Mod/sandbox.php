@@ -9,6 +9,11 @@
     </div>
     <div class="flex">
         <div class="minsize_half greybg logic_preview_left">
+            <div class="flex">
+                <p>inline integration</p>
+                <?php create_inline_empty_container(1)?>
+            </div>
+            
             <?php
                 create_extensible_empty_container();
             ?>
@@ -21,7 +26,6 @@
             >
 
             </iframe>
-            <!-- Auto loaded frame basé sur les pièces posées. -->
         </div>
     </div>
 </div>

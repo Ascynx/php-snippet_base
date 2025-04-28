@@ -9,6 +9,16 @@
         return false;
     }
 
+    function doesPageMatch(string $uri, string $match): bool {
+        $uri_components = parse_url($uri);
+        $path = $uri_components['path'];
+
+        if (preg_match($match, $path)) {
+            return true;
+        }
+        return false;
+    }
+
     function get_query_components(string $uri): array {
         $uri_components = parse_url($uri);
         if (!isset($uri_components['query'])) {

@@ -9,6 +9,7 @@
     $components = get_query_components($uri);
 
     require_once("Controllers/indexController.php");
+    require_once("Controllers/exerciseController.php");
 
     #TODOS
 

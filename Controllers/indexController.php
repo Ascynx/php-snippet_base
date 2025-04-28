@@ -24,7 +24,7 @@
                 continue;
             }
 
-            $path = $COMPONENTS["testing"][$id];
+            $path = $COMPONENTS["testing"][$id]->$path;
             require($path);
         }
     }

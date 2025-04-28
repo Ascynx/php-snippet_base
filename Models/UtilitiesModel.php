@@ -16,3 +16,10 @@
         $vertical_flex = true;
         require("Views/Components/Container.php");
     }
+
+    function create_inline_empty_container($max = -1) {
+        $inline = true;
+        $preview = true;
+        $pieces_max = $max;
+        require("Views/Components/Container.php");
+    }
