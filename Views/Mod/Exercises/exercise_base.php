@@ -18,8 +18,15 @@
                 title="Preview"
                 src="<?php ?>"
             >
-
             </iframe>
         </div>
+    </div>
+    <div class="flex">
+        <form action="/<?php echo($exercise); ?>?check=1" method="post">
+            <textarea name="logic_transfer" id="logic_transfer" style="display:none"></textarea>
+            <button type="submit">
+                Vérifier la réponse 
+            </button>
+        </form>
     </div>
 </div>

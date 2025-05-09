@@ -64,11 +64,75 @@ function load() {
             }
         }
     )
+
+    $("button[type=submit]").on(
+        {
+            "click": (e) => {
+                if ($("div." + PREVIEW_TAG).length != $("div."+PREVIEW_TAG).has("img").length)  {
+                    //Il faut un minimum d'un par element.
+                    alert("not all filled");
+                }
+
+                let transfert = $("textarea#logic_transfer");
+                remplisObjetDeTransfert(transfert)
+            }
+        }
+    )
 }
 
-/***
- * @argument a {HTMLElement}
- * @argument b {HTMLElement}
+
+
+/**
+ * 0xFFFF_FFFF
+ * 0xFFFFFFFF - 0xFFFF0000 => element Index
+ * 0xFFFFFFFF - 0x0000FFFF => container Index
+ * chacun permettent un total de 65655 possibilités.
+ * 
+ * @param {number} containerIndex 
+ * @param {number} elementIndex 
+ * @returns {number} sous format 0xFFFF_FFFF (0xcontainerId_elementId) max id 65655 pour les deux
+ */
+function toBitIndex(containerIndex, elementIndex) {
+    let bitId = elementIndex | (containerIndex << 16);
+    return bitId;
+}
+
+/**
+ * version javascript si nécessaire
+ * @param {number} bitIndex 
+ * @returns { {containerId: number, elementId: number} }   
+ */
+function fromBitIndex(bitIndex) {
+    let containerId = bitIndex >> 16;
+    let elementId = bitIndex - (containerId << 16);
+    return {containerId, elementId};
+}
+
+/**
+ * 
+ * @param {HTMLElement} objTransfert 
+ */
+function remplisObjetDeTransfert(objTransfert) {
+    let extensibleContainers = $("div." + PREVIEW_TAG);
+    let valueString = "";
+    extensibleContainers.each((containerId, container) => {
+        $(container).children().each((elementId, element) => {
+            let img = $(element).children("img")[0];
+            if (typeof(img) === 'undefined') {
+                return;
+            }
+            
+            let id = img.id;
+            valueString += toBitIndex(containerId, elementId) + "=" + id + ";";
+        })
+    })
+    $(objTransfert).val(valueString);
+    alert(valueString);
+}
+
+/**
+ * @param {HTMLElement} a
+ * @param {HTMLElement} b
  */
 function swap(a, b) {
     if (typeof(a.children[0]) == 'undefined') {
@@ -88,21 +152,25 @@ function swap(a, b) {
 
 function update() {
     const urlThis = new URL(window.document.URL);
-    let extensibleContainer = $("div." + PREVIEW_TAG);
+    let extensibleContainers = $("div." + PREVIEW_TAG);
 
     let frame = $("iframe#reload-frame");
     let base = PREVIEW_MAPPINGS[toKeyMapping(urlThis.pathname)];
-    let url = new URL(base, urlThis.href + "/../");//on utilise le ../ pour retourner au root et on ajoute le nouveau chemin.
-    extensibleContainer.children().each((i, el) => {
-        let img = $(el).children("img")[0];
-        if (typeof(img) === 'undefined') {
-            return;
-        }
-        let id = img.id;
-        url.searchParams.set(i, id);
-    });
+    let url = new URL(base, urlThis.href + "/../");//on utilise le ../ pour retourner a la source et on ajoute le nouveau chemin.
+    extensibleContainers.each((containerIndex, container) => {
+        $(container).children().each((elementIndex, element) => {
+            let img = $(element).children("img")[0];
+            if (typeof(img) === 'undefined') {
+                return;
+            }
+            let id = img.id;
+
+            url.searchParams.set(toBitIndex(containerIndex, elementIndex), id);
+        });
+    })
 
     //récupère l'iframe et change sa source, ce qui va la recharger avec les nouveaux paramètres.
+    //modifiable via ctrl + I mais c'est pas un système nécessitant beaucoup de sécurité.
     if (typeof(frame) != 'undefined' && frame.length > 0) {
         frame[0].setAttribute("src", url.toString());
     }

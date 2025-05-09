@@ -14,17 +14,12 @@
         require_once("Models/ComponentModel.php");
         require_once("Views/Sideload/css.php");
 
-        for ($i = 0; $i < count($components); $i++) {
-            $id = $components[$i];
-            if ($id == -1) {
-                continue;
-            }
+        foreach($components as $index=>$id) {
             if (!isset($COMPONENTS["testing"][$id])) {
                 echo("missing component for id: " . $id);
                 continue;
             }
-
-            $path = $COMPONENTS["testing"][$id]->$path;
+            $path = $COMPONENTS["testing"][$id]->path;
             require($path);
         }
     }

@@ -1,5 +1,6 @@
 export const PREVIEW_MAPPINGS = {
-    "sandbox": "sandboxpreview"
+    "sandbox": "sandboxpreview",
+    "0_0": "sandboxpreview"
 };
 
 export const CONTAINER_TAG = "logic_container";

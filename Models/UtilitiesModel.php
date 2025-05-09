@@ -23,3 +23,15 @@
         $pieces_max = $max;
         require("Views/Components/Container.php");
     }
+
+    /**
+     * voir Assets/scripts/js/index.mjs #toBitIndex pour plus d'informations.
+     */
+    function fromBitIndex($bitIndex) {
+        $containerId = $bitIndex >> 16;
+        $elementId = $bitIndex - ($containerId << 16);
+        return array(
+            "containerId"=>$containerId,
+            "elementId"=>$elementId
+        );
+    }
