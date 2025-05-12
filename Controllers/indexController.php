@@ -14,12 +14,19 @@
         require_once("Models/ComponentModel.php");
         require_once("Views/Sideload/css.php");
 
+
+        $referer = parse_url($_SERVER['HTTP_REFERER']);
+        $referer_path =  substr($referer['path'], 1);
         foreach($components as $index=>$id) {
-            if (!isset($COMPONENTS["testing"][$id])) {
+            if (!isset($COMPONENTS[$referer_path][$id])) {
                 echo("missing component for id: " . $id);
                 continue;
             }
-            $path = $COMPONENTS["testing"][$id]->path;
-            require($path);
+            $component = $COMPONENTS[$referer_path][$id];
+            if ($component->is_path()) {
+                require($component->path);
+            } else {
+                echo($component->content);
+            }
         }
     }

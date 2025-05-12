@@ -14,7 +14,11 @@
 
             $valuesArray = explode(";", $valuesString);
             
+            $toutCorrect = true;
             foreach($valuesArray as $value) {
+                if (empty($value)) {
+                    continue;
+                }
                 //k=v
                 $kv = explode("=", $value);
                 $k = $kv[0];
@@ -23,8 +27,11 @@
                 $indexes = fromBitIndex($k);
                 $containerId = $indexes['containerId'];
                 $elementId = $indexes['elementId'];
+                if (!(new ComponentPosition($containerId, $elementId)->matches($EXERCICES_VERIFICATION[$exercise][$v]))) {
+                    $toutCorrect = false;
+                    break;
+                }
             }
-            echo("devrait vérifier les valeurs données.");
         }
 
         $elements = [];

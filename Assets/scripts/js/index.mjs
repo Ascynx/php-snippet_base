@@ -127,7 +127,6 @@ function remplisObjetDeTransfert(objTransfert) {
         })
     })
     $(objTransfert).val(valueString);
-    alert(valueString);
 }
 
 /**
