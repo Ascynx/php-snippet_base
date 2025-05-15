@@ -8,7 +8,7 @@ function load() {
         dragenter: function(e) { $(this).addClass(OVERDRAGGING_TAG); },
         dragover: function(e) { e.preventDefault(); },
         drop: function(event) {
-            //capacité de limiter le nombre de pièces pouvant entrer dans ce "slot".
+            //capacité de limiter le nombre de pièces pouvant entrer dans ce container.
             let maxPiecesAttribute = this.getAttribute(MAXIMUM_ELEMENTS_ATTRIBUTE);
             if (maxPiecesAttribute != null && maxPiecesAttribute !== "-1" && this.children.length >= parseInt(maxPiecesAttribute)) {
                 return;
