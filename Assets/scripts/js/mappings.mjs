@@ -1,6 +1,19 @@
 export const PREVIEW_MAPPINGS = { //page utilisée par l'iframe pour recharger (page actuelle: page preview)
     "sandbox": "sandboxpreview",
-    "0_0": "sandboxpreview"
+    "0_0": "sandboxpreview",
+    
+    "1_1": "sandboxpreview",
+    "1_2": "sandboxpreview",
+    "1_3": "sandboxpreview",
+    "1_4": "sandboxpreview",
+    "1_5": "sandboxpreview",
+
+    "2_1": "sandboxpreview",
+    "2_2": "sandboxpreview",
+    "2_3": "sandboxpreview",
+    "2_4": "sandboxpreview",
+    "2_5": "sandboxpreview",
+    "2_6": "sandboxpreview"
 };
 
 export const CONTAINER_TAG = "logic_container"; //un container pour différents éléments
