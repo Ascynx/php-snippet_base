@@ -8,8 +8,8 @@
     </div>
     <div class="flex">
         <div class="minsize_half greybg logic_preview_left">
-            <?php 
-                create_extensible_empty_container();
+            <?php
+                require_once($exercise_base);
             ?>
         </div>
         <div class="frame-container">

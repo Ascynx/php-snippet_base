@@ -42,7 +42,8 @@
             $element = array("id"=>$i, "image"=>$image);
             array_push($elements, $element);
         }
-
+        
+        $exercise_base = $BASES[$exercise];
         $page_content = "Views/Mod/Exercises/exercise_base.php";
         $title = "Exercice - " . $exercise;
         require("Views/base.php");

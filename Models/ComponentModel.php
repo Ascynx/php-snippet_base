@@ -56,6 +56,24 @@
         }
     }
 
+    $BASES = [
+        "1_1" => "Views/Bases/1_+/1_1.php",
+        "1_2" => "Views/Bases/1_+/1_2.php",
+        "1_3" => "Views/Bases/1_+/1_3.php",
+        "1_4" => "Views/Bases/1_+/1_4.php",
+        "1_5" => "Views/Bases/1_+/1_5.php",
+
+        "2_1" => "Views/Bases/2_+/2_1.php",
+        "2_2" => "Views/Bases/2_+/2_2.php",
+        "2_3" => "Views/Bases/2_+/2_3.php",
+        "2_4" => "Views/Bases/2_+/2_4.php",
+        "2_5" => "Views/Bases/2_+/2_5.php",
+        "2_6" => "Views/Bases/2_+/2_6.php",
+
+        "3_1" => "Views/Bases/3_+/3_1.php",
+        "3_2" => "Views/Bases/3_+/3_2.php",
+    ];
+
     $COMPONENTS = [
         "testing" => [
             new Component("Assets/images/Snippets/footer.png", "Views/Components/foot.php"),
@@ -172,7 +190,7 @@
 
     $EXERCICES_VERIFICATION = [ //id exercice => (Id composant => Position(container, element)[]) 
         "0_0" => [
-            new ComponentPosition(0, 0),
-            new ComponentPosition(0, 1)        
+            0 => new ComponentPosition(0, 0),
+            1 => new ComponentPosition(0, 1)        
         ]
     ];
