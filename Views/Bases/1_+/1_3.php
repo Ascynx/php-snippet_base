@@ -1,17 +1,27 @@
 <div>
     <div>
-
+        <h2>Exemples d'interactions utilisateur</h2>
+        <p>Cette page présente trois éléments interactifs courants :</p>
+        <ul>
+            <li>Un texte qui devient gras au survol de la souris.</li>
+            <li>Une image dont la taille augmente lors d'un clic.</li>
+            <li>Un bouton désactivé pour illustrer l'état inactif.</li>
+        </ul>
     </div>
     <div>
-        <div class="                          ">
+        <div>
             <p>Texte gras au survol</p>
-        </div>
-        <div class="                          ">
-            <p>Taille Accrue au click</p>
-            <img src="" alt="">
+            <p>Passez la souris sur ce texte pour voir l'effet de survol.</p>
         </div>
         <div>
-            <button disabled class= "                        ">Bouton</button>
+            <p>Taille accrue au click</p>
+            <p>Cliquez sur l'image ci-dessous pour l'agrandir :</p>
+            <img src="Assets/images/rook.png" alt="Image d'exemple">
+        </div>
+        <div>
+            <p>Bouton désactivé</p>
+            <button disabled>Bouton</button>
+            <p>Ce bouton est désactivé et ne peut pas être cliqué.</p>
         </div>
     </div>
 </div>

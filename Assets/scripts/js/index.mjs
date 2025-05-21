@@ -155,6 +155,9 @@ function update() {
 
     let frame = $("iframe#reload-frame");
     let base = PREVIEW_MAPPINGS[toKeyMapping(urlThis.pathname)];
+    if (typeof(base) === 'undefined') {
+        base = urlThis.pathname;
+    }
     let url = new URL(base, urlThis.href + "/../");//on utilise le ../ pour retourner a la source et on ajoute le nouveau chemin.
     extensibleContainers.each((containerIndex, container) => {
         $(container).children().each((elementIndex, element) => {

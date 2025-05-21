@@ -7,7 +7,7 @@ body {
     position: relative;
     height: auto;
     min-height: 100% !important;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .center-self {

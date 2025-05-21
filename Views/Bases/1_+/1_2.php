@@ -1,36 +1,38 @@
 <div>
     <div>
-        
-    </div>
-    <div>
         <div>
             <p>Bloc flex vertical</p>
-            <div class= "                               ">
+            <div class="">
                 <div>
-                    <p>Bloc 1</p>
+                    <p>Titre : Présentation</p>
+                    <p>Bienvenue sur notre page de démonstration des layouts flexibles.</p>
                 </div>
                 <div>
-                    <p>Bloc 2</p>
+                    <p>Titre : Objectif</p>
+                    <p>Ce bloc explique comment organiser du contenu verticalement.</p>
                 </div>
                 <div>
-                    <p>Bloc 3</p>
+                    <p>Titre : Contact</p>
+                    <p>Pour toute question, contactez-nous à contact@exemple.com.</p>
                 </div>
             </div>
         </div>
         <div>
             <p>Bloc flex horizontal</p>
-            <div class="                                 ">
+            <div class="">
                 <div>
-                    <p>Bloc 4</p>
+                    <p>Produit A</p>
+                    <p>Un produit innovant pour améliorer votre quotidien.</p>
                 </div>
                 <div>
-                    <p>Bloc 5</p>
+                    <p>Produit B</p>
+                    <p>Découvrez notre nouvelle gamme de services personnalisés.</p>
                 </div>
                 <div>
-                    <p>Bloc 6</p>
+                    <p>Produit C</p>
+                    <p>Profitez d'une assistance dédiée et d'une équipe à votre écoute.</p>
                 </div>
             </div>
         </div>
-        
     </div>
 </div>

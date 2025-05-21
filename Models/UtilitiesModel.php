@@ -35,3 +35,28 @@
             "elementId"=>$elementId
         );
     }
+
+    function load_from($COMPONENTS, $TYPES, $containerId, $elementId) {
+        $i = ($containerId << 16) + $elementId;
+        if (!isset($COMPONENTS[$i]) || !isset($TYPES[$i])) {
+            return;
+        }
+
+        $component = $COMPONENTS[$i];
+        if ($TYPES[$i] == "path") {
+            $src = $component;
+            require($src);
+        } else if ($TYPES[$i] == "content") {
+            $content = $component;
+            echo($content);
+        }
+    }
+
+    function load_all_from_container($COMPONENTS, $TYPES, $containerId) {
+        $containerBit = $containerId << 16;
+        $i = 0;
+        while (isset($COMPONENTS[$containerBit + $i])) {
+            load_from($COMPONENTS, $TYPES, $containerId, $i);
+            $i++;
+        }
+    }

@@ -63,19 +63,18 @@
         "1_4" => "Views/Bases/1_+/1_4.php",
         "1_5" => "Views/Bases/1_+/1_5.php",
 
-        "2_1" => "Views/Bases/2_+/2_1.php",
+        "2_1" => "Views/Bases/2_+/empty.php",
         "2_2" => "Views/Bases/2_+/2_2.php",
         "2_3" => "Views/Bases/2_+/2_3.php",
         "2_4" => "Views/Bases/2_+/2_4.php",
         "2_5" => "Views/Bases/2_+/2_5.php",
         "2_6" => "Views/Bases/2_+/2_6.php",
 
-        "3_1" => "Views/Bases/3_+/3_1.php",
-        "3_2" => "Views/Bases/3_+/3_2.php",
+        "3_1" => "Views/Bases/3_+/3_1.php"
     ];
 
     $COMPONENTS = [
-        "testing" => [
+        "sandbox" => [
             new Component("Assets/images/Snippets/footer.png", "Views/Components/foot.php"),
             new Component("Assets/images/rook.png", "Views/Components/nav.php"),
             new Component("Assets/images/Snippets/index.png", "Views/index.php"),
@@ -125,66 +124,53 @@
 
         #blocs de code (PHP/HTML)
         "2_1" => [ #Page normale / crab
-            new Component("", "Views/Snippets/2_+/2_1_HEAD.php"), #head
-            new Component("", "Views/Snippets/2_+/2_1_MAIN1.php"), #main 1
-            new Component("", "Views/Snippets/2_+/2_1_MAIN2.php"), #main 2
-            new Component("", "Views/Snippets/2_+/2_1_FOOT.php") # footer
+            new Component("Assets/images/Snippets/2_+/2_1_HEAD.png", "Views/Snippets/2_+/2_1_HEAD.php"), #head
+            new Component("Assets/images/Snippets/2_+/2_1_MAIN1.png", "Views/Snippets/2_+/2_1_MAIN1.php"), #main 1
+            new Component("Assets/images/Snippets/2_+/2_1_MAIN2.png", "Views/Snippets/2_+/2_1_MAIN2.php"), #main 2
+            new Component("Assets/images/Snippets/2_+/2_1_FOOT.png", "Views/Snippets/2_+/2_1_FOOT.php") # footer
         ],
 
         "2_2" => [ #Contenu (1)
-            new Component("", ""), #liste d'objets
-            new Component("", "Views/Snippets/2_+/2_2_CREDITS.php"), #contactez nous + crédits
-            new Component("", ""), #liste d'objets 2
+            new Component("Assets/images/Snippets/2_+/2_2_OBJLIST1.png", "Views/Snippets/2_+/2_2_OBJLIST1.php"), #liste d'objets
+            new Component("Assets/images/Snippets/2_+/2_2_CREDITS.png", "Views/Snippets/2_+/2_2_CREDITS.php"), #contactez nous + crédits
+            new Component("Assets/images/Snippets/2_+/2_2_OBJLIST2.png", "Views/Snippets/2_+/2_2_OBJLIST2.php"), #liste d'objets 2
         ],
 
         "2_3" => [ #Contenu (2)
-            new Component("", ""), #liste d'utilisateurs actifs
-            new Component("", ""), #réactions
-            new Component("", ""), #image
-            new Component("", ""), #contactez nous
-            new Component("", "") #comentaires
+            new Component("Assets/images/Snippets/2_+/2_3_SECTION_ACTIF.png", "Views/Snippets/2_+/2_3_SECTION_ACTIF.php"), #liste d'utilisateurs actifs
+            new Component("Assets/images/Snippets/2_+/2_3_SECTION_REACT.png", "Views/Snippets/2_+/2_3_SECTION_REACT.php"), #réactions
+            new Component("Assets/images/Snippets/2_+/2_3_SECTION_POST.png", "Views/Snippets/2_+/2_3_SECTION_POST.php"), #Post
+            new Component("Assets/images/Snippets/2_+/2_3_CONTACT.png", "Views/Snippets/2_+/2_3_CONTACT.php"), #contactez nous
+            new Component("Assets/images/Snippets/2_+/2_3_SECTION_COMMENTS.png", "Views/Snippets/2_+/2_3_SECTION_COMMENTS.php") #comentaires
         ],
 
         "2_4" => [ #forms
-            new Component("", ""), #text area
-            new Component("", ""), #submit button
-            new Component("", ""), #calendar
-            new Component("", ""), #radios
+            new Component("Assets/images/Snippets/2_+/2_4_DESC.png", "Views/Snippets/2_+/2_4_DESC.php"), #text area
+            new Component("Assets/images/Snippets/2_+/2_4_SUBMIT.png", "Views/Snippets/2_+/2_4_SUBMIT.php"), #submit button
+            new Component("Assets/images/Snippets/2_+/2_4_SPEC.png", "Views/Snippets/2_+/2_4_SPEC.php"), #calendar / dropdown
+            new Component("Assets/images/Snippets/2_+/2_4_RADIO.png", "Views/Snippets/2_+/2_4_RADIO.php"), #radios
         ],
 
         "2_5" => [ #Textes
-            new Component("", ""), #titre
-            new Component("", ""), #introduction
-            new Component("", ""), #sous-titre
-            new Component("", ""), #paragraphe 1
-            new Component("", ""), #paragraphe 2
-            new Component("", ""), #conclusion
+            new Component("Assets/images/Snippets/2_+/2_5_TITRE.png", "Views/Snippets/2_+/2_5_TITRE.php"), #titre
+            new Component("Assets/images/Snippets/2_+/2_5_INTRODUCTION.png", "Views/Snippets/2_+/2_5_INTRODUCTION.php"), #introduction
+            new Component("Assets/images/Snippets/2_+/2_5_SOUS_TITRE.png", "Views/Snippets/2_+/2_5_SOUS_TITRE.php"), #sous-titre
+            new Component("Assets/images/Snippets/2_+/2_5_DEVELOP.png", "Views/Snippets/2_+/2_5_DEVELOP.php"), #paragraphe 1
+            new Component("Assets/images/Snippets/2_+/2_5_DEVELOP2.png", "Views/Snippets/2_+/2_5_DEVELOP2.php"), #paragraphe 2
+            new Component("Assets/images/Snippets/2_+/2_5_CONCLUSION.png", "Views/Snippets/2_+/2_5_CONCLUSION.php"), #conclusion
         ],
 
         "2_6" => [ #Bibliographie
-            new Component("", ""), #titre
-            new Component("", ""), #ressources 1
-            new Component("", ""), #ressources 2
-            new Component("", ""), #citations + sources
+            new Component("Assets/images/Snippets/2_+/2_6_TITRE.png", "Views/Snippets/2_+/2_6_TITRE.php"), #titre
+            new Component("Assets/images/Snippets/2_+/2_6_RESSOURCES.png", "Views/Snippets/2_+/2_6_RESSOURCES.php"), #ressources 
+            new Component("Assets/images/Snippets/2_+/2_6_CITATIONS.png", "Views/Snippets/2_+/2_6_CITATIONS.php"), #citations + sources
         ],
 
 
         #blocs de code (2)
         "3_1" => [ #Import de ressources
-            new Component("", ""), #(css exercice 1)
-            new Component("", ""), #(css exercice 2)
-            new Component("", ""), #(css avec le plus de priorité)
-            new Component("", ""), #import js :P
-        ],
-
-        "3_2" => [ #Changement du titre et de la favicon
-            new Component("", ""), #titre école
-            new Component("", ""), #titre un peu con
-            new Component("", ""), #titre site de conversation
-            new Component("", ""), #titre fast food
-            new Component("", ""), #favicon fast food
-            new Component("", ""), #favicon école
-            new Component("", ""), #favicon site de conversation
+            new Component("Assets/images/Snippets/3_+/3_1_IMPORT_CSS.png", "Views/Snippets/3_+/3_1_IMPORT_CSS.php"), #import css
+            new Component("Assets/images/Snippets/3_+/3_1_IMPORT_JS.png", "Views/Snippets/3_+/3_1_IMPORT_JS.php"), #import js
         ]
     ];
 
@@ -192,5 +178,74 @@
         "0_0" => [
             0 => new ComponentPosition(0, 0),
             1 => new ComponentPosition(0, 1)        
+        ],
+
+        "1_1" => [
+            0 => new ComponentPosition(0, 0),
+            1 => new ComponentPosition(0, 1),
+            2 => new ComponentPosition(0, 2),
+            3 => new ComponentPosition(0, 3),
+            4 => new ComponentPosition(0, 4)
+        ],
+        "1_2" => [
+            0 => new ComponentPosition(0, 0),
+            1 => new ComponentPosition(0, 1),
+            2 => new ComponentPosition(0, 2),
+            3 => new ComponentPosition(0, 3)
+        ],
+        "1_3" => [
+            0 => new ComponentPosition(0, 0),
+            1 => new ComponentPosition(0, 1),
+            2 => new ComponentPosition(0, 2)
+        ],
+        "1_4" => [
+            0 => new ComponentPosition(0, 0),
+            1 => new ComponentPosition(0, 1),
+            2 => new ComponentPosition(0, 2),
+            3 => new ComponentPosition(0, 3)
+        ],
+        "1_5" => [
+            0 => new ComponentPosition(0, 0),
+            1 => new ComponentPosition(0, 1),
+            2 => new ComponentPosition(0, 2)
+        ],
+
+        "2_1" => [
+            0 => new ComponentPosition(0, 0),
+            1 => new ComponentPosition(0, 1),
+            2 => new ComponentPosition(0, 2),
+            3 => new ComponentPosition(0, 3)
+        ],
+        "2_2" => [
+            0 => new ComponentPosition(0, 0),
+            2 => new ComponentPosition(1, 0),
+            1 => new ComponentPosition(2, 0)
+        ],
+        "2_3" => [
+            2 => new ComponentPosition(0, 0),
+            4 => new ComponentPosition(0, 1),
+            0 => new ComponentPosition(0, 2),
+            1 => new ComponentPosition(0, 3),
+            3 => new ComponentPosition(1, 0)
+        ],
+        "2_4" => [
+            //fait comme tu veux.
+        ],
+        "2_5" => [
+            0 => new ComponentPosition(0, 0),
+            1 => new ComponentPosition(0, 1),
+            2 => new ComponentPosition(0, 2),
+            3 => new ComponentPosition(0, 3),
+            4 => new ComponentPosition(0, 4),
+            5 => new ComponentPosition(0, 5)
+        ],
+        "2_6" => [
+            0 => new ComponentPosition(0, 0),
+            1 => new ComponentPosition(0, 1),
+            2 => new ComponentPosition(0, 2)
+        ],
+
+        "3_1" => [
+            //fait comme tu veux.
         ]
     ];

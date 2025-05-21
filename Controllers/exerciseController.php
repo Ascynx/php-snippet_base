@@ -3,6 +3,27 @@
 
     if (doesPageMatch($uri, "/[0-9]_[0-9]/")) {
         $exercise = substr(parse_url($uri)['path'], 1);
+
+        if ($LOADED_IN == "iframe") {
+            $LOADS = [];
+            $TYPES = [];
+            foreach($components as $index=>$id) {
+                if (!isset($COMPONENTS[$exercise][$id])) {
+                    echo("missing component for id: " . $id);
+                    continue;
+                }
+                $component = $COMPONENTS[$exercise][$id];
+                if ($component->is_path()) {
+                    $LOADS[$index] = $component->path;
+                    $TYPES[$index] = "path";
+                } else {
+                    $LOADS[$index] = $component->content;
+                    $TYPES[$index] = "content";
+                }
+            }
+        }
+
+
         if (!isset($COMPONENTS[$exercise])) {
             echo("Error, could not find exercise for ID: " . $exercise);
         }
@@ -44,7 +65,12 @@
         }
         
         $exercise_base = $BASES[$exercise];
-        $page_content = "Views/Mod/Exercises/exercise_base.php";
         $title = "Exercice - " . $exercise;
-        require("Views/base.php");
+        $env = $LOADED_IN;
+        if ($LOADED_IN != "iframe") {
+            $page_content = "Views/Mod/Exercises/exercise_base.php";
+            require("Views/base.php");
+        } else {
+            require($exercise_base);
+        }
     }

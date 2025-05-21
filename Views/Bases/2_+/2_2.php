@@ -1,21 +1,17 @@
 <div>
     <div>
-        <p>Cet exercice a pour objectif de montrer la possibilité des classes et couleurs via </p>
+        <h2>Les différents types de bateaux</h2>
+        <?php if ($env == "iframe"): ?>
+            <?php load_from($LOADS, $TYPES, 0, 0); ?>
+            <?php load_from($LOADS, $TYPES, 1, 0); ?>
+        <?php else: ?>
+            <?php create_extensible_empty_container(1) ?>
+            <?php create_extensible_empty_container(1) ?>
+        <?php endif; ?>
     </div>
-
-    <div>
-        <div  class="                         ">
-            <p>Ce bloc est censé être rouge</p>
-        </div>
-    </div>
-    <div>
-        <div class="                          ">
-            <p>Celui-ci devrait être bleu</p>
-        </div>
-    </div>
-    <div>
-        <div>
-
-        </div>
-    </div>
+    <?php if ($env == "iframe"): ?>
+        <?php load_from($LOADS, $TYPES, 2, 0); ?>
+    <?php else: ?>
+        <?php create_extensible_empty_container(1) ?>
+    <?php endif; ?>
 </div>
