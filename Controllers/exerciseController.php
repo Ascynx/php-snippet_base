@@ -2,6 +2,9 @@
     require_once("Models/ComponentModel.php");
 
     if (doesPageMatch($uri, "/[0-9]_[0-9]/")) {
+    //sideload du css.
+    require_once("Views/Sideload/css_1_+.php");
+
         $exercise = substr(parse_url($uri)['path'], 1);
 
         if ($LOADED_IN == "iframe") {

@@ -182,32 +182,27 @@
 
         "1_1" => [
             0 => new ComponentPosition(0, 0),
-            1 => new ComponentPosition(0, 1),
-            2 => new ComponentPosition(0, 2),
-            3 => new ComponentPosition(0, 3),
-            4 => new ComponentPosition(0, 4)
+            1 => new ComponentPosition(1, 0),
         ],
         "1_2" => [
             0 => new ComponentPosition(0, 0),
-            1 => new ComponentPosition(0, 1),
-            2 => new ComponentPosition(0, 2),
-            3 => new ComponentPosition(0, 3)
+            1 => new ComponentPosition(1, 0),
         ],
         "1_3" => [
             0 => new ComponentPosition(0, 0),
-            1 => new ComponentPosition(0, 1),
-            2 => new ComponentPosition(0, 2)
+            1 => new ComponentPosition(1, 0),
+            2 => new ComponentPosition(2, 0)
         ],
         "1_4" => [
             0 => new ComponentPosition(0, 0),
-            1 => new ComponentPosition(0, 1),
-            2 => new ComponentPosition(0, 2),
-            3 => new ComponentPosition(0, 3)
+            1 => new ComponentPosition(1, 0),
+            2 => new ComponentPosition(2, 0),
+            3 => new ComponentPosition(3, 0)
         ],
         "1_5" => [
-            0 => new ComponentPosition(0, 0),
-            1 => new ComponentPosition(0, 1),
-            2 => new ComponentPosition(0, 2)
+            1 => new ComponentPosition(0, 0),
+            2 => new ComponentPosition(1, 0),
+            0 => new ComponentPosition(2, 0)
         ],
 
         "2_1" => [

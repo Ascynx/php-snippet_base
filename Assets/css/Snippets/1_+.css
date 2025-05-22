@@ -1,0 +1,73 @@
+.background_rouge {
+    background-color: #FF0000;
+}
+
+.background_bleu {
+    background-color: #0000FF;
+}
+
+.background_vert {
+    background-color: #00FF00;
+}
+
+.display_none {
+    display: none;
+}
+
+.texte_gras {
+    font-weight: bold;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex_vertical {
+    flex-direction: column;
+}
+
+.flex_horizontal {
+    flex-direction: row;
+}
+
+.display_block {
+    display: block;
+}
+
+.hover_texte_gras:hover {
+    font-weight: bold;
+}
+
+.click_div_accroitre:active,
+.click_div_accroitre:focus {
+    transform: scale(1.1);
+}
+
+.disabled_texte_rouge {
+    color: red;
+}
+
+.texte_taille_16 {
+    font-size: 16px;
+}
+
+.texte_police_couriernew_monospace {
+    font-family: 'Courier New', monospace;
+}
+
+.texte_pas_deco {
+    text-decoration: none;
+}
+
+.bordure_gras {
+    border: 2px solid black;
+}
+
+.padding_accroitre {
+    padding: 10px;
+}
+
+.div_taille_limitee {
+    max-width: 100px;
+    max-height: 100px;
+}
