@@ -2,7 +2,12 @@
     <div>
         <div>
             <p>Bloc flex vertical</p>
-            <div class="">
+            <?php if ($env == "iframe"): ?>
+                <div class="<?php load_from($LOADS, $TYPES, 0, 0) ?>">
+            <?php else: ?>
+                <div>
+                <span><p><?php echo(htmlspecialchars("<div class=\"")); create_inline_empty_container(1); echo(htmlspecialchars("\">")); ?></p></span>
+            <?php endif; ?>
                 <div>
                     <p>Titre : Présentation</p>
                     <p>Bienvenue sur notre page de démonstration des layouts flexibles.</p>
@@ -19,7 +24,12 @@
         </div>
         <div>
             <p>Bloc flex horizontal</p>
-            <div class="">
+            <?php if ($env == "iframe"): ?>
+                <div class="<?php load_from($LOADS, $TYPES, 0, 0) ?>">
+            <?php else: ?>
+                <div>
+                <span><p><?php echo(htmlspecialchars("<div class=\"")); create_inline_empty_container(1); echo(htmlspecialchars("\">")); ?></p></span>
+            <?php endif; ?>
                 <div>
                     <p>Produit A</p>
                     <p>Un produit innovant pour améliorer votre quotidien.</p>
