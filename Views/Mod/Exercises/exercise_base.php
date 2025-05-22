@@ -22,11 +22,27 @@
         </div>
     </div>
     <div class="flex">
+        <?php if (isset($score)): ?>
+        <div> <!-- Bordure + flex horizontal centré -->
+            <div>
+                <h4>Résultat</h4>
+                <p>Votre score : <?php echo($score); ?></p>
+            </div>
+            <button>
+                <?php $next = get_next_exercise($exercise); ?>
+                <a href="/<?php echo($next); ?>">
+                    Prochain exercice (<?php echo "exercice " . $next ?>)
+                </a>
+            </button>
+        </div>
+        <?php else: ?>
         <form action="/<?php echo($exercise); ?>?check=1" method="post">
             <textarea name="logic_transfer" id="logic_transfer" style="display:none"></textarea>
             <button type="submit">
                 Vérifier la réponse 
             </button>
         </form>
+        <?php endif; ?>
+
     </div>
 </div>

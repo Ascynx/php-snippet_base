@@ -39,6 +39,7 @@
             $valuesArray = explode(";", $valuesString);
             
             $toutCorrect = true;
+            $score = 0;
             foreach($valuesArray as $value) {
                 if (empty($value)) {
                     continue;
@@ -54,8 +55,13 @@
                 if (!(new ComponentPosition($containerId, $elementId)->matches($EXERCICES_VERIFICATION[$exercise][$v]))) {
                     $toutCorrect = false;
                     break;
+                } else {
+                    $score++;
                 }
             }
+            $score = $score / count($EXERCICES_VERIFICATION[$exercise]);
+            $score = round($score * 100, 2);
+            $score = $score . "%";
         }
 
         $elements = [];

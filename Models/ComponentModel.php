@@ -73,6 +73,30 @@
         "3_1" => "Views/Bases/3_+/3_1.php"
     ];
 
+    function get_next_exercise($exercise) {
+        $exercises = [
+            "0_0",
+            "1_1",
+            "1_2",
+            "1_3",
+            "1_4",
+            "1_5",
+            "2_1",
+            "2_2",
+            "2_3",
+            "2_4",
+            "2_5",
+            "2_6",
+            "3_1"
+        ];
+
+        $i = array_search($exercise, $exercises);
+        if (!isset($exercises[$i + 1])) {
+            return $exercises[0];
+        }
+        return $exercises[$i + 1];
+    }
+
     $COMPONENTS = [
         "sandbox" => [
             new Component("Assets/images/Snippets/footer.png", "Views/Components/foot.php"),
