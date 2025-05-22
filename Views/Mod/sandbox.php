@@ -1,10 +1,14 @@
 <div>
     <div class="flex greybg logic_container">
         <?php
-            create_load_piece(0, "Assets/images/Snippets/footer.png");
-            create_load_piece(1, "Assets/images/rook.png");
-            create_load_piece(2, "Assets/images/Snippets/index.png");
-            create_load_piece(3, "Assets/images/Snippets/HelloWorld.png")
+            foreach($COMPS as $index=>$components) {
+                foreach($components as $id=>$component) {
+                    if ($component->is_path()) {
+                        $src = $component->image;
+                        create_load_piece($id, $src);
+                    }
+                }
+            }
         ?>
     </div>
     <div class="flex">

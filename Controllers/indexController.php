@@ -5,9 +5,12 @@
 
         require_once("Views/base.php");
     } elseif (isPage($uri, "/sandbox")) {
+        require_once("Models/UtilitiesModel.php");
+        require_once("Models/ComponentModel.php");
         $page_content = "Views/Mod/sandbox.php";
         $title = "Test";
 
+        $COMPS = $COMPONENTS;
         require_once("Views/base.php");
     } elseif (isPage($uri, "/sandboxpreview")) {
         require_once("Views/Mod/sandbox_preview.php");
