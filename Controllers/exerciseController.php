@@ -52,7 +52,7 @@
                 $indexes = fromBitIndex($k);
                 $containerId = $indexes['containerId'];
                 $elementId = $indexes['elementId'];
-                if (!(new ComponentPosition($containerId, $elementId)->matches($EXERCICES_VERIFICATION[$exercise][$v]))) {
+                if (!((new ComponentPosition($containerId, $elementId))->matches($EXERCICES_VERIFICATION[$exercise][$v]))) {
                     $toutCorrect = false;
                     break;
                 } else {
